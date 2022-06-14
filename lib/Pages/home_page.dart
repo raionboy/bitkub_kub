@@ -80,34 +80,34 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     Container(
-                        height: 150,
-                        color: Color(0xff1BAE5D),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Align(
-                                  alignment: Alignment(0, -0.5),
-                                  child: Container(
-                                      child: Text('ยินดีต้อนรับ',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 25)))),
-                              Align(
-                                  alignment: Alignment(0, -0.5),
-                                  child: OutlinedButton(
-                                      onPressed: () {},
-                                      child: Text('New version',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15)),
-                                      style: OutlinedButton.styleFrom(
-                                          minimumSize: Size(150, 35),
-                                          side: BorderSide(
-                                              color: Colors.white, width: 2),
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(6)))))
-                            ])),
+                      height: 150,
+                      color: Color(0xff1BAE5D),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Align(
+                              alignment: Alignment(0, -0.5),
+                              child: Container(
+                                  child: Text('ยินดีต้อนรับ',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 25)))),
+                          Align(
+                              alignment: Alignment(0, -0.5),
+                              child: OutlinedButton(
+                                  onPressed: () {},
+                                  child: Text('New version',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 15)),
+                                  style: OutlinedButton.styleFrom(
+                                      minimumSize: Size(150, 35),
+                                      side: BorderSide(
+                                          color: Colors.white, width: 2),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(6)))))
+                        ],
+                      ),
+                    ),
                     Container(
                       height: 150,
                       color: Color(0xff121617),
