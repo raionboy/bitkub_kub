@@ -12,17 +12,21 @@ class _HomePageState extends State<HomePage> {
     return Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(menu.length, (index) {
-          return Column(children: [
-            Container(
+          return Column(
+            children: [
+              Container(
                 width: 80,
                 height: 48,
                 decoration:
-                    BoxDecoration(color: Colors.black, shape: BoxShape.circle)),
-            Padding(
+                    BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+              ),
+              Padding(
                 padding: const EdgeInsets.only(top: 6),
                 child: Text(menu[index],
-                    style: TextStyle(color: Colors.white, fontSize: 11)))
-          ]);
+                    style: TextStyle(color: Colors.white, fontSize: 11)),
+              )
+            ],
+          );
         }));
   }
 
