@@ -71,8 +71,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color(0xff242C2E),
         leading: Image.asset('assets/icons/icon1.png'),
-        title:
-            Text('bitkub', style: TextStyle(color: Colors.white, fontSize: 25)),
+        title: Text(
+          'bitkub',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
         titleSpacing: 0.0,
       ),
       body: SingleChildScrollView(
@@ -221,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           onTap: () {
-                            print('ssss');
+                            print('กดที่รูป');
                           },
                         );
                       }),
