@@ -8,17 +8,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  MenuHome(List menu) {
+  MenuHome1(List menu) {
     return Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(menu.length, (index) {
           return Column(
             children: [
-              Container(
-                width: 80,
-                height: 48,
-                decoration:
-                    BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+              InkWell(
+                child: Container(
+                  child: Image.asset(icon_menu1[index]),
+                  width: 80,
+                  height: 48,
+                ),
+                onTap: (() {}),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 6),
@@ -30,6 +32,44 @@ class _HomePageState extends State<HomePage> {
         }));
   }
 
+  MenuHome2(List menu) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: List.generate(menu.length, (index) {
+          return Column(
+            children: [
+              InkWell(
+                child: Container(
+                  child: Image.asset(icon_menu2[index]),
+                  width: 80,
+                  height: 48,
+                ),
+                onTap: (() {}),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Text(menu[index],
+                    style: TextStyle(color: Colors.white, fontSize: 11)),
+              )
+            ],
+          );
+        }));
+  }
+
+  List icon_menu1 = [
+    'assets/icons/icon_menu1.jpg',
+    'assets/icons/icon_menu2.jpg',
+    'assets/icons/icon_menu3.jpg',
+    'assets/icons/icon_menu4.jpg'
+  ];
+
+  List icon_menu2 = [
+    'assets/icons/icon_menu5.jpg',
+    'assets/icons/icon_menu6.jpg',
+    'assets/icons/icon_menu7.jpg',
+    'assets/icons/icon_menu8.jpg'
+  ];
+
   List announce = [
     'ประกาศแจ้ง Terra Classic อยู่ระหว่างการพิจารณาทบทวนคุณสมบัติ โปรดซื้อขายเหรียญ LUNC ด้วยความระมัดระวัง',
     'เปิดระบบถอนเหรียญ LUNA2 วันที่ 10/06/2565 เวลา 18:00 น. และแอร์ดรอปรอบ Post-attack Snapshot ภายใน 48 ชม.',
@@ -38,7 +78,7 @@ class _HomePageState extends State<HomePage> {
     'New Listing: เปิดระบบฝาก-ถอนเหรียญ TRX และ HBAR วันที่ 07/06/2565 เวลา 13:00 น.'
   ];
 
-  List coinname = [
+  List showcoin = [
     'BTC/THB',
     'ETH/THB',
     'XRP/THB',
@@ -71,17 +111,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color(0xff242C2E),
         leading: Image.asset('assets/icons/icon1.png'),
-        title: Text(
-          'bitkub',
-          style: TextStyle(color: Colors.white, fontSize: 25),
-        ),
+        title:
+            Text('bitkub', style: TextStyle(color: Colors.white, fontSize: 25)),
         titleSpacing: 0.0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Stack(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment(0, 1),
               children: [
                 Column(
                   children: [
@@ -130,70 +168,71 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      MenuHome(
+                      MenuHome1(
                           ['ฝาก THB', 'ถอน THB', 'ซื้อ / ขาย', 'ชวนเพื่อน']),
-                      MenuHome(
+                      MenuHome2(
                           ['Bitkub connect', 'ข่าว', 'ใช้ KUB', 'ช่วยเหลือ']),
                     ],
                   ),
                 ),
               ],
             ),
-            Stack(children: [
-              Container(
-                color: Color(0xff121617),
-                child: SingleChildScrollView(
-                  child: SizedBox(
-                    height: 40,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: announce.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.only(left: 40),
-                            width: 345,
-                            child: Center(
-                              child: Text(
-                                announce[index],
-                                style: TextStyle(
-                                    color: Color(0xffA2ADA5), fontSize: 12),
-                              ),
-                            ),
-                          );
-                        }),
+            Stack(
+              children: [
+                Container(
+                  color: Color(0xff121617),
+                  child: SingleChildScrollView(
+                    child: SizedBox(
+                      height: 40,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: announce.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              margin: EdgeInsets.only(left: 40),
+                              width: 345,
+                              child: Center(
+                                  child: Text(announce[index],
+                                      style: TextStyle(
+                                          color: Color(0xffA2ADA5),
+                                          fontSize: 12))),
+                            );
+                          }),
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 40,
-                height: 40,
-                color: Color(0xff121617),
-                child: Icon(
-                  Icons.volume_up,
-                  color: Color(0xffA2ADA5),
-                ),
-              )
-            ]),
+                Container(
+                  width: 40,
+                  height: 40,
+                  color: Color(0xff121617),
+                  child: Icon(
+                    Icons.volume_up,
+                    color: Color(0xffA2ADA5),
+                  ),
+                )
+              ],
+            ),
             Container(
               child: SingleChildScrollView(
                 child: SizedBox(
                   height: 100,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: coinname.length,
+                      itemCount: showcoin.length,
                       itemBuilder: (context, index) {
                         return Container(
                           width: 128,
                           color: Color(0xff242C2E),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Spacer(),
                               Text(
-                                coinname[index],
+                                showcoin[index],
                                 style: TextStyle(
                                     color: Color(0xffA2ADA5), fontSize: 14),
                               ),
-                              Spacer()
+                              Text('x,xxx,xxx.xx'),
+                              Text('Change %')
                             ],
                           ),
                         );
@@ -222,9 +261,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          onTap: () {
-                            print('กดที่รูป');
-                          },
+                          onTap: () {},
                         );
                       }),
                 ),
