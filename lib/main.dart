@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'Pages/home_page.dart';
 import 'Pages/market_page.dart';
 import 'Pages/setting_page.dart';
 import 'Pages/trade_page.dart';
+import 'Pages/wallet_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
   runApp(MyApp());
 }
 
@@ -14,7 +22,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
       home: BitKub(),
     );
   }
@@ -30,7 +37,13 @@ class BitKub extends StatefulWidget {
 class _BitKubState extends State<BitKub> {
   int currentIndex = 0;
 
-  List pages = [HomePage(), MarketPage(), TradePage(), SettingPage()];
+  List pages = [
+    HomePage(),
+    MarketPage(),
+    TradePage(),
+    WalletPage(),
+    SettingPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +57,9 @@ class _BitKubState extends State<BitKub> {
               icon: Icon(Icons.insert_chart_outlined_rounded), label: 'Market'),
           BottomNavigationBarItem(
               icon: Icon(Icons.currency_exchange), label: 'Trade'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet_outlined),
+              label: 'Wallet'),
           BottomNavigationBarItem(
               icon: Icon(Icons.manage_accounts_outlined), label: 'Setting')
         ],

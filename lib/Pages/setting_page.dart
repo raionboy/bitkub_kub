@@ -6,11 +6,14 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff121617),
       appBar: AppBar(
         backgroundColor: Color(0xff242C2E),
-        title: Text('ตั้งค่า'),
+        title: Text('ตั้งค่า', style: TextStyle(color: Colors.white)),
       ),
-      body: Center(child: Text('Setting', style: TextStyle(fontSize: 60))),
+      body: Center(
+          child: Text('Setting',
+              style: TextStyle(color: Colors.white, fontSize: 60))),
     );
   }
 }

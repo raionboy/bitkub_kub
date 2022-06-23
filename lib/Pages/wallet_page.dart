@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MarketPage extends StatelessWidget {
-  const MarketPage({Key? key}) : super(key: key);
+class WalletPage extends StatelessWidget {
+  const WalletPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +9,10 @@ class MarketPage extends StatelessWidget {
       backgroundColor: Color(0xff121617),
       appBar: AppBar(
         backgroundColor: Color(0xff242C2E),
-        title: Text('ตลาด', style: TextStyle(color: Colors.white)),
+        title: Text('กระเป๋าสตางค์', style: TextStyle(color: Colors.white)),
       ),
       body: Center(
-          child: Text('Market',
+          child: Text('Wallet',
               style: TextStyle(color: Colors.white, fontSize: 60))),
     );
   }
